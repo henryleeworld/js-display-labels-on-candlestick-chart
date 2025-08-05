@@ -8,26 +8,26 @@
         <meta property="og:description" content="每一 K 線皆由「實體」和「影線」兩部份組成，實體較影線為粗，影線則依附於實體的上下兩端。其中實體部份記錄當天的開盤價和收盤價，影線部份則記錄當天的最高價和最低價。影線又分為「上影線」和「下影線」兩種，陽線的上影線表示最高價和收盤價的差距，下影線表示最低價和開盤價的差距；陰線的上影線則表示最高價和開盤價的差距，下影線表示最低價和收盤價的差距。" />
         <meta property="og:locale" content="zh_TW" />
         <meta property="og:type" content="website" />
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.3/css/bootstrap.min.css" integrity="sha512-GQGU0fMMi238uA+a/bdWJfpUGKUkBdgfFdgBm72SUQ6BeyWjoY/ton0tEjH+OSH9iP4Dfh+7HM0I9f5eR0L/4w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.2.1/css/bootstrap.min.css" integrity="sha512-siwe/oXMhSjGCwLn+scraPOWrJxHlUgMBMZXdPe2Tnk3I0x3ESCoLz7WZ5NTH6SZrywMY+PB1cjyqJ5jAluCOg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
         <title>在 K 線上顯示標籤</title>
     </head>
     <body>
         <div class="container">
             <div class="row justify-content-md-center">
-                <div class="col-md-6">
+                <div class="col-md-6 mt-3">
                     <p class="text-muted">K 線</p>
                     <div id="canvas-holder">
-                        <canvas id="chart-area" style="display: none;"></canvas>
-                        <img id="chart-url" class="img-fluid" />
+                        <canvas id="chart-area" style="img-fluid"></canvas>
+                        <img id="chart-url" class="img-fluid d-none" />
                     </div>
                 </div>
             </div>
         </div>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" defer></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.3/js/bootstrap.min.js" integrity="sha512-OvBgP9A2JBgiRad/mM36mkzXSXaJE9BEIENnVEmeZdITvwT09xnxLtT4twkCa8m/loMbPHsvPl0T8lRGVBwjlQ==" crossorigin="anonymous" referrerpolicy="no-referrer" defer></script>
-        <script src="https://cdn.jsdelivr.net/npm/luxon@2.0.1" defer></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.1/chart.min.js" integrity="sha512-QSkVNOCYLtj73J4hbmVoOV6KVZuMluZlioC+trLpewV8qMjsWqlIQvkn1KGX2StWvPMdWGBqim1xlC8krl1EKQ==" crossorigin="anonymous" referrerpolicy="no-referrer" defer></script>
-        <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-luxon@1.0.0" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js" integrity="sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7giUp0VxICtqdrbqU7iVaeZNXA==" crossorigin="anonymous" referrerpolicy="no-referrer" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.2.1/js/bootstrap.min.js" integrity="sha512-vyRAVI0IEm6LI/fVSv/Wq/d0KUfrg3hJq2Qz5FlfER69sf3ZHlOrsLriNm49FxnpUGmhx+TaJKwJ+ByTLKT+Yg==" crossorigin="anonymous" referrerpolicy="no-referrer" defer></script>
+        <script src="https://cdn.jsdelivr.net/npm/luxon@3.4.4" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js" integrity="sha512-CQBWl4fJHWbryGE+Pc7UAxWMUMNMWzWxF4SQo9CgkJIN1kx6djDQZjh3Y8SZ1d+6I+1zze6Z7kHXO7q3UyZAWw==" crossorigin="anonymous" referrerpolicy="no-referrer" defer></script>
+        <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-luxon@1.3.1" defer></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/chartjs-plugin-datalabels/2.0.0/chartjs-plugin-datalabels.min.js" integrity="sha512-R/QOHLpV1Ggq22vfDAWYOaMd5RopHrJNMxi8/lJu8Oihwi4Ho4BRFeiMiCefn9rasajKjnx9/fTQ/xkWnkDACg==" crossorigin="anonymous" referrerpolicy="no-referrer" defer></script>
         <script src="https://www.chartjs.org/chartjs-chart-financial/chartjs-chart-financial.js" defer></script>
         <script src="js/candlestick-chart.js" defer></script>

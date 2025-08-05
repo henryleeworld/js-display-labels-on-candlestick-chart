@@ -13,6 +13,21 @@ $.getJSON("data/data.json", function(data) {
             animation: {
                 onComplete: done
             },
+            responsive: true,
+            scales: {
+                x: {
+                    type: 'time',
+                    time: {
+                        unit: 'day'
+                    },
+                    ticks: {
+                        source: 'data'
+                    }
+                },
+                y: {
+                    beginAtZero: false
+                }
+            },
             plugins: {
                 legend: {
                     display: false,

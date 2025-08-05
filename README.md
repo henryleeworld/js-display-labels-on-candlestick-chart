@@ -11,5 +11,5 @@ $ git clone
 ----
 
 ## 畫面截圖
-![](https://i.imgur.com/VCDpCu3.png)
+![](https://i.imgur.com/gKICXFD.png)
 > K 線的長短取決於價差，若開盤價和收盤價的差距越大，則實體部份就會越長
